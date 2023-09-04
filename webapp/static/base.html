@@ -11,7 +11,7 @@
         </div>
            <div class="box">
             <form class="form" method="GET" action="/search">                      
-             <input list="browsers" name="search" id="search" autocomplete="off">
+             <input list="browsers" name="search" id="search" autocomplete="on">
             <datalist id="browsers">
              {{range .}}<option value="{{.Name}}">{{.Name}}</option>
              <option>{{.Creationdate}}</option>            
@@ -32,14 +32,6 @@
                     {{.Name}}
                 </div>   
             </a> 
-            {{ if .isThere }}
-            <div>
-                {{range .Suggestion}}{{end}}
-            </div>
-            {{ else }}
-            <div class="searchresult">
-  {{.SearchResult}}</div>
-  {{end}}
             {{end}}
         </div>
     </body>

@@ -34,7 +34,7 @@ type Err struct {
 	StatusCode int
 }
 type NoMatch struct {
-	IsThere bool
+	Thereis bool
 	Suggestion []string
 }
 /*

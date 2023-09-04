@@ -3,6 +3,7 @@ package gt
 import (
 	// handlers "gt/webapp/handlers"
 	"strings"
+	// "fmt"
 )
 
 func Tosearch(typedData string, APIcall []Artists) []Artists {
@@ -32,7 +33,6 @@ func Tosearch(typedData string, APIcall []Artists) []Artists {
 			ifMatching = true
 		}
 		for _, oneLocation := range oneArtist.Locations {
-			typedData = strings.ReplaceAll(typedData, " ", ", ")
 			typedData = strings.ReplaceAll(typedData, "-", ", ")
 			typedData = strings.ReplaceAll(typedData, "_", " ")
 			if strings.ToUpper(oneLocation) == typedData {
