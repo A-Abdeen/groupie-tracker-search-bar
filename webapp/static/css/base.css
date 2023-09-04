@@ -70,37 +70,32 @@ a {
     height: 30px;
     display: flex;
     cursor:pointer;
-    padding: 10px 20px;
+    padding: 25px 25px;
     background: #000000;
     /* border-radius: 30px; */
     align-items: center;
     justify-content: center;
    
 }
-.box:hover input {
+.box input {
     width: 400px;
-    height: 30px;
+    height: 38px;
     background-color: #686868;
     font-size: larger;
     font-family: 'Arial', sans-serif;
-}
-.box input{ 
     border-radius: 10px;
     justify-content: center;
     color: #dab744;
-    width: 0;
-    outline: none;
-    border: none;
+    width: 400px;
     font-weight: 500;
-    transition: 0.8s;
-    background: transparent;
 }
 button{
     background-color: #686868;
     color: #dab744;
     font-size: 25px;
     border-radius: 10px;
-    /* height: 20px; */
+    height: 18px;
+    padding-bottom: 35px;
 }
 button:hover{
     background-color:#dab744;
@@ -110,8 +105,23 @@ button:hover{
     font-size: 24px;
     font-weight: 600;
     width: auto;
-    max-width: 200px;  }
-.datalist{
-    overflow: scroll;
-    max-height: 0;
+    max-width: 200px; 
+ }
+
+.suggestion {
+    margin-left: 50px;
+   justify-content: center;
+   display: flexbox;
+   font-size: 40px;
+   margin-left: 800px;
+}
+
+.suggestion .searchresult{
+    color: aqua;
+    cursor:pointer;
+}
+h1{
+    font-size: 50px;
+    justify-content: center;
+    display: flex;
 }

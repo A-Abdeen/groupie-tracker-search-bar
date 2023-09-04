@@ -11,6 +11,7 @@ func NoMatchFound(typedData string, APIcall []Artists) []string{
 		typedDataRune = append(typedDataRune, letter)
 	}
 	var dataToReturn []string
+	var data []string
 	matchingLetters := 0
 	nonMatchingLetters := 0
 	for _, oneArtist := range APIcall {
@@ -26,8 +27,8 @@ func NoMatchFound(typedData string, APIcall []Artists) []string{
 		}
 	}
 }
-	if matchingLetters+1 >= len(typedData) {
-		dataToReturn = append(dataToReturn, oneArtist.Name)
+	if matchingLetters+2 >= len(typedData) && len(typedData)>4 {
+		data = append(data, oneArtist.Name)
 	}
 	matchingLetters = 0
 	nonMatchingLetters = 0
@@ -43,8 +44,8 @@ func NoMatchFound(typedData string, APIcall []Artists) []string{
 				break
 			}
 		}}
-		if matchingLetters+1 >= len(typedData) {
-		dataToReturn = append(dataToReturn, oneMember)
+		if matchingLetters+2 >= len(typedData) && len(typedData)>4{
+		data = append(data, oneMember)
 	}
 	matchingLetters = 0
 	nonMatchingLetters = 0
@@ -64,12 +65,25 @@ func NoMatchFound(typedData string, APIcall []Artists) []string{
 					}
 				}
 			}
-				if matchingLetters+1 >= len(typedData) {
-					dataToReturn = append(dataToReturn, oneLocation)
+				if matchingLetters+2 >= len(typedData)&& len(typedData)>4 {
+					data = append(data, oneLocation)
 				}
 				matchingLetters = 0
 				nonMatchingLetters = 0
 			}
 	}
-	return dataToReturn
+if data != nil{
+for i:=0;i<len(data);i++{
+	count := 0	
+	for j:= len(data)-1;j>i;j--{
+	if data[i] == data[j] {
+		count++
+		break
+	}	
+}
+if count == 0 {
+dataToReturn = append(dataToReturn, data[i])}
+}	
+}
+return dataToReturn
 }

@@ -9,9 +9,8 @@
         
         <div class="cool-header">
             <a href="/" title="Back to Home Page"><h1>Groupie Tracker</h1></a>
-        </div>{{if not .Thereis}}{{range .Suggestion}}{{.}}{{end}}
+        </div>
         <div class="artists-container">
-            {{else}}
             {{range .}} <!-- range over APIcall to get present the name and images --> 
             <a href="/details?id={{.Id}}" class="artist-card"> <!-- the a tag turns the image along with the name to a url that is clickable -->
                 <div class="artist-image">
@@ -24,7 +23,7 @@
             <div class="searchresult">
                 {{.SearchResult}}     
             </div>      
-            {{end}}{{end}}
+            {{end}}
         </div>        
     </body>
 </html>

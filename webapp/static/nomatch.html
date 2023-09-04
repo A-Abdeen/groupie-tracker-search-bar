@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Groupie</title>
+        <link rel="stylesheet" href="/css/base.css">
+
+    </head>
+    <body>    
+        <div class="cool-header">
+            <a href="/" title="Back to Home Page"><h1>Groupie Tracker</h1></a>
+        </div>
+        <h1>No results found</h1>
+        <div class="suggestion">
+            {{range .Suggestion}}
+            <br><li>Did you mean
+            <div class="searchresult">
+                <a href="/search?search={{.}}" class="artist-card">{{.}}</a>  
+            </div></li>       
+            {{end}}
+        </div>        
+    </body>
+</html>

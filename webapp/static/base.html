@@ -11,7 +11,7 @@
         </div>
            <div class="box">
             <form class="form" method="GET" action="/search">                      
-             <input list="browsers" name="search" id="search" autocomplete="on">
+             <input list="browsers" required ="true" name="search" id="search" autocomplete="off">
             <datalist id="browsers">
              {{range .}}<option value="{{.Name}}">{{.Name}}</option>
              <option>{{.Creationdate}}</option>            
@@ -20,7 +20,7 @@
              {{range .Dates}}<option value="{{.}}">{{.}}</option>{{end}}
              <option>{{.FirstAlbum}}</option>{{end}}
              </datalist>
-             <button type="submit"><i class="fa fa-search">search</i></button></form>
+             <button type="submit">search</button></form>
                 </div>
         <div class="artists-container">
             {{range .}} <!-- range over APIcall to get present the name and images -->

@@ -19,17 +19,17 @@ func Tosearch(typedData string, APIcall []Artists) []Artists {
 		}
 		for _, oneMember := range oneArtist.Member {
 			if strings.ToUpper(oneMember) == typedData {
-				toDisplay = "Search matches member name " + oneMember
+				toDisplay = "Search matches member Name " + oneMember
 				ifMatching = true
 			}
 		}
 		if typedDataInt == oneArtist.Creationdate {
-			toDisplay = "Search matches creation date " + typedData
+			toDisplay = "Search matches creation Date " + typedData
 			ifMatching = true
 		}
 		firstAlbum := Atoi(oneArtist.FirstAlbum)
 		if typedDataInt == firstAlbum {
-			toDisplay = "Search matches First Album date " + typedData
+			toDisplay = "Search matches First Album Date " + typedData
 			ifMatching = true
 		}
 		for _, oneLocation := range oneArtist.Locations {
