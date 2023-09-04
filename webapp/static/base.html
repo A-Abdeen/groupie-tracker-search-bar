@@ -13,6 +13,7 @@
             <form class="form" method="GET" action="/search">                      
              <input list="browsers" required ="true" name="search" id="search" autocomplete="off">
             <datalist id="browsers">
+                <!-- remove redundant data -->
              {{range .}}<option value="{{.Name}}">{{.Name}}</option>
              <option>{{.Creationdate}}</option>            
              {{range .Locations}}<option value="{{.}}">{{.}}</option>{{end}}
