@@ -20,13 +20,26 @@ func SearchHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	typedData := r.FormValue("search")
-	dataToReturn := API.Tosearch(typedData, APIcall)
-	t, err := template.ParseFiles(HtmlTmpl...)
+	matchingArtists := API.Tosearch(typedData, APIcall)
+	if matchingArtists == nil {
+		var examples API.NoMatch
+		suggestion := API.NoMatchFound(typedData, APIcall)
+		examples = API.NoMatch{IsThere: true, Suggestion: suggestion}
+		t, err := template.ParseFiles(HtmlTmpl...)
 	if err != nil {
 		ErrorHandler(w, r, http.StatusInternalServerError)
 		return
 	}
 	w.WriteHeader(http.StatusOK)
-	t.ExecuteTemplate(w, "base.html", dataToReturn)
+	t.ExecuteTemplate(w, "base.html", examples)
+	} else {
+		t, err := template.ParseFiles(HtmlTmpl...)
+	if err != nil {
+		ErrorHandler(w, r, http.StatusInternalServerError)
+		return
+	}
+	w.WriteHeader(http.StatusOK)
+	t.ExecuteTemplate(w, "base.html", matchingArtists)
+	}
+}	
 
-}

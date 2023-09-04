@@ -33,7 +33,10 @@ type Err struct {
 	Msg        string
 	StatusCode int
 }
-
+type NoMatch struct {
+	IsThere bool
+	Suggestion []string
+}
 /*
 Below struct is known as struct composition
 (or struct embedding)
