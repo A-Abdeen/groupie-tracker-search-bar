@@ -9,6 +9,8 @@ body {
 .cool-header {
     background-color: #000000; 
     padding: 10px 0;
+    display: flexbox;
+    width: 100%;
 }
 .cool-header a {
   text-decoration: none;
@@ -18,12 +20,16 @@ body {
 .container {
   display: flex;
   text-align: center;
+  min-width: 100px;
 }
 .l-col {
   width: 50%;
+  overflow: hidden;
 }
 .r-col {
-  flex-grow: 1;
+  /* flex-grow: 1; */
+  overflow: hidden;
+  width: 50%;
 }
 input[type="checkbox"] {  
   opacity: 0;
@@ -37,6 +43,7 @@ h5:hover {
   /* min-height: fit-content; */
     max-height: 2000px;
     align-items: baseline;
+    overflow: hidden;
   }
 input[type="checkbox"]:checked ~ h3 ~ h5 {
   /* min-height: fit-content; */
@@ -57,10 +64,13 @@ label {
   padding: 10px;
   border-radius: 8px;
   cursor: pointer;
+  width:auto;
+  overflow: hidden;
 }
 label:hover{
   color:#282828;
   background-color:#dab744;
+  overflow: hidden;
 }
 h5 {
   overflow: hidden;
@@ -72,4 +82,5 @@ h5 {
   align-self:initial;
   line-height: 1.5em;
   width: 800px;
+  width: auto;
 }

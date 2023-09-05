@@ -30,11 +30,11 @@ func Relations() map[int][]string {
 	}
 	detailsPageRelations := individualRelations.Index
 	allRelations := make(map[int][]string, len(detailsPageRelations))
-	for i, Relationdetails := range detailsPageRelations { // to go through all the relations and arrange them in order 
+	for i, Relationdetails := range detailsPageRelations { // to go through all the relations and arrange them in order
 		for idx, data := range Relationdetails.Relation { // since detailsPageRelations is a map idx is the location and data is the dates for each location
 			for idx, i := range data { // i represents each single date and idx is its index
 				if idx == 0 {
-					dates = dates  + i // the array of dates is converted to a string with the dates seperated by a coma
+					dates = dates + i // the array of dates is converted to a string with the dates seperated by a coma
 				} else {
 					dates = i + ", " + dates
 				}
@@ -46,7 +46,7 @@ func Relations() map[int][]string {
 			dateAndLocation = append(dateAndLocation, oneDateandLocation) // the dates and locations are appended into a single array of string
 			dates = ""
 		}
-		allRelations[i] = dateAndLocation // the dates and locations for each artist are appended together 
+		allRelations[i] = dateAndLocation // the dates and locations for each artist are appended together
 		dateAndLocation = []string{}
 	}
 

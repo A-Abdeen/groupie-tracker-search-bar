@@ -20,7 +20,7 @@ func BaseHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	// typedData := r.FormValue("search")
-    // API.SuggestionBox(typedData, APIcall)
+	// API.SuggestionBox(typedData, APIcall)
 	t, err := template.ParseFiles(HtmlTmpl...)
 	if err != nil {
 		ErrorHandler(w, r, http.StatusInternalServerError)

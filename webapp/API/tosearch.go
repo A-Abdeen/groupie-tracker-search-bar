@@ -11,33 +11,33 @@ func Tosearch(typedData string, APIcall []Artists) []Artists {
 	typedData = strings.ToUpper(typedData)
 	var dataToReturn []Artists
 	var toDisplay string
-	ifMatching := false  
+	ifMatching := false // boolean used so that whenever the data matches the artist details are appended
 	for i, oneArtist := range APIcall {
 		if strings.ToUpper(oneArtist.Name) == typedData {
-			toDisplay = "Search matches name " + oneArtist.Name
+			toDisplay = "Search matches Name " + oneArtist.Name
 			ifMatching = true
 		}
 		for _, oneMember := range oneArtist.Member {
 			if strings.ToUpper(oneMember) == typedData {
-				toDisplay = "Search matches member Name " + oneMember
+				toDisplay = "Search matches "  + oneArtist.Name + " Member name " + oneMember
 				ifMatching = true
 			}
 		}
 		if typedDataInt == oneArtist.Creationdate {
-			toDisplay = "Search matches creation Date " + typedData
+			toDisplay = "Search matches " + oneArtist.Name +" Creation Date " + typedData
 			ifMatching = true
 		}
 		firstAlbum := Atoi(oneArtist.FirstAlbum)
 		if typedDataInt == firstAlbum {
-			toDisplay = "Search matches First Album Date " + typedData
+			toDisplay = "Search matches "  + oneArtist.Name + "\nFirst Album Date " + typedData
 			ifMatching = true
 		}
 		for _, oneLocation := range oneArtist.Locations {
 			typedData = strings.ReplaceAll(typedData, "-", ", ")
 			typedData = strings.ReplaceAll(typedData, "_", " ")
 			if strings.ToUpper(oneLocation) == typedData {
-				toDisplay = "Search matches Location " + oneLocation
-				ifMatching = true			
+				toDisplay = "Search matches " + oneArtist.Name + " Location " + oneLocation
+				ifMatching = true
 			}
 		}
 		for _, oneDate := range oneArtist.Dates {
@@ -48,11 +48,11 @@ func Tosearch(typedData string, APIcall []Artists) []Artists {
 			}
 		}
 		if ifMatching {
-		ArtistDetails := APIcall[i]
-		ArtistDetails.SearchResult = toDisplay
-		dataToReturn = append(dataToReturn, ArtistDetails)
-	}
-	ifMatching = false
+			ArtistDetails := APIcall[i] // the data is appended according to the artist that matches from the index
+			ArtistDetails.SearchResult = toDisplay // data added to the artist struct according to the matching result
+			dataToReturn = append(dataToReturn, ArtistDetails) // all the artists that match are appended and returned as an []Artists
+		}
+		ifMatching = false
 	}
 	return dataToReturn
 }
