@@ -109,16 +109,19 @@ button:hover{
  }
 
 .suggestion {
-    margin-left: 50px;
-   justify-content: center;
-   display: flexbox;
-   font-size: 40px;
-   margin-left: 800px;
+    margin: auto;
+    width: 50%;
+   /* justify-content: center; */
+   display: flex-box;
+   font-size: 30px;
+   display: inline-flexbox;
+   /* margin-left: 800px; */
 }
 
 .suggestion .searchresult{
     color: aqua;
     cursor:pointer;
+    display: inline;
 }
 h1{
     font-size: 50px;

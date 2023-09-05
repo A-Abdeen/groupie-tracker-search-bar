@@ -29,11 +29,17 @@ input[type="checkbox"] {
   opacity: 0;
 }
 input[type="checkbox"]:hover ~ h3 ~ h5 {
-min-height: fit-content;
+/* min-height: fit-content; */
   max-height: 2000px;
+  align-items: baseline;
 }
+h5:hover {
+  /* min-height: fit-content; */
+    max-height: 2000px;
+    align-items: baseline;
+  }
 input[type="checkbox"]:checked ~ h3 ~ h5 {
-  min-height: fit-content;
+  /* min-height: fit-content; */
     align-items:baseline; 
     max-height: 2000px;
   }
@@ -41,7 +47,7 @@ input[type="checkbox"]:checked ~ h3 ~ h5 {
     color: #888888;
     transform: scale(1.15);
     /* background-color:#dab744; */
-    min-height: fit-content;
+    /* min-height: fit-content; */
       align-items:baseline; 
       max-height: 2000px;
     }
@@ -55,12 +61,12 @@ label {
 label:hover{
   color:#282828;
   background-color:#dab744;
-  
 }
 h5 {
   overflow: hidden;
   max-height: 0;
-  transition: 0.5s ease;
+  transition: 1.5s ease-in;
+  transition: 0.5 ease-out;
   display:inline-block;
   text-align: center;
   align-self:initial;
